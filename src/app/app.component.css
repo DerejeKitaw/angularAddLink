@@ -1,0 +1,32 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 0.3fr 2fr;
+  /* grid-column-gap:1em;
+  grid-row-gap:1em; */
+  grid-gap:1em;
+  justify-items: stretch;
+  }
+  .wrapper >div{
+      background: #eee;
+      padding: 1em;
+  }
+  .wrapper >div:nth-child(odd){
+      background: #ddd;
+  }
+
+  .vote{
+    width: 100%;
+    border:#333 1px solid;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+}
+  .title{
+    border:#333 1px solid;
+    display:grid;
+    grid-template-rows: 1fr 0.1fr;
+    justify-items: start;
+}
+.points{
+  font-size: 3rem;
+}

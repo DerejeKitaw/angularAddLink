@@ -1,1 +1,59 @@
-<div>App works</div>
+<div class="container">
+  <form>
+    <fieldset>
+
+      <h3 class="col-sm-2 col-form-label col-form-label-lg">Add a Link</h3>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <div class="col-sm-10">
+          <input name="title" id="title" #newtitle class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="link">Link:</label>
+        <div class="col-sm-10">
+          <input name="link" id="link" #newlink class="form-control">
+        </div>
+      </div>
+      <button (click)="addArticle(newtitle, newlink)" class="btn btn-primary">
+        Submit link
+      </button>
+    </fieldset>
+  </form>
+  <hr>
+  <div *ngFor="let article of articles" class="wrapper">
+    <div class="card">
+      <div class="card-body ">
+        <div class="card-title points">
+          {{ article.votes }}
+        </div>
+        <div class="card-subtitle text-muted">
+          Points
+        </div>
+      </div>
+    </div>
+    <div class="card title" >
+      <h5 class="card-title ">
+        <a href="{{ article.link }}">
+          {{ article.title }}
+        </a>
+      </h5>
+      <div class="row vote">
+        <li class="form-group">
+          <a href (click)="voteUp(article.title)">
+            <i class="arrow up icon"></i>
+            upvote
+          </a>
+        </li>
+        <li class="form-group col-md-6">
+          <a href (click)="voteDown(article.title)">
+            <i class="arrow down icon"></i>
+            downvote
+          </a>
+        </li>
+      </div>
+    </div>
+
+  </div>
+</div>
